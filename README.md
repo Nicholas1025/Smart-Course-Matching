@@ -22,7 +22,8 @@ A semantic web–powered academic recommendation system that helps students find
 Smart-Course-Matching/
 ├── app.py                      # Main Flask application
 ├── data/
-│   └── ontology.rdf            # RDF data file generated from courses.xml
+│   ├── ontology.rdf            # RDF data file generated from courses.xml
+│   └── courses.xml             # Source XML file for course data
 ├── queries/
 │   ├── recommend.sparql        # Main course recommendation query
 │   ├── domains.sparql          # Domain listing query
@@ -32,9 +33,9 @@ Smart-Course-Matching/
 │   ├── results.html            # Course result display page
 │   └── error.html              # Error display template
 ├── static/                     # (Optional) CSS/images if needed
-├── data/courses.xml            # Source XML file for course data
 ├── xml_to_rdf.py               # Script to convert XML → RDF
 └── requirements.txt            # Python dependencies
+
 
 ---
 
