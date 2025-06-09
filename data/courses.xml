@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<courses>
+  <course>
+    <code>TSW6223</code>
+    <title>Semantic Web Technology</title>
+    <domain>ArtificialIntelligence</domain>
+    <credits>3</credits>
+    <prerequisite></prerequisite>
+    <yearOffered>Year 2 Trimester 2</yearOffered>
+    <level>Level 6</level>
+    <clos>
+      <clo>CLO1</clo>
+      <clo>CLO2</clo>
+      <clo>CLO3</clo>
+    </clos>
+    <topics>
+      <topic>RDF and RDFS</topic>
+      <topic>OWL Ontology</topic>
+      <topic>SPARQL Queries</topic>
+    </topics>
+  </course>
+
+  <course>
+    <code>TML6223</code>
+    <title>Machine Learning</title>
+    <domain>ArtificialIntelligence</domain>
+    <credits>3</credits>
+    <prerequisite>TCP6114</prerequisite>
+    <yearOffered>Year 2 Trimester 2</yearOffered>
+    <level>Level 6</level>
+    <clos>
+      <clo>CLO1</clo>
+      <clo>CLO2</clo>
+      <clo>CLO3</clo>
+    </clos>
+    <topics>
+      <topic>Supervised Learning</topic>
+      <topic>Unsupervised Learning</topic>
+      <topic>Ensemble Learning</topic>
+    </topics>
+  </course>
+
+  <course>
+    <code>TSE6101</code>
+    <title>Software Engineering Fundamentals</title>
+    <domain>SoftwareEngineering</domain>
+    <credits>3</credits>
+    <prerequisite></prerequisite>
+    <yearOffered>Year 2 Trimester 1</yearOffered>
+    <level>Level 5</level>
+    <clos>
+      <clo>CLO1</clo>
+      <clo>CLO2</clo>
+    </clos>
+    <topics>
+      <topic>Software Lifecycle</topic>
+      <topic>UML Modelling</topic>
+      <topic>Testing Techniques</topic>
+    </topics>
+  </course>
+
+  <course>
+    <code>TDS6223</code>
+    <title>Data Analytics with Python</title>
+    <domain>DataScience</domain>
+    <credits>3</credits>
+    <prerequisite></prerequisite>
+    <yearOffered>Year 2 Trimester 2</yearOffered>
+    <level>Level 6</level>
+    <clos>
+      <clo>CLO1</clo>
+      <clo>CLO3</clo>
+    </clos>
+    <topics>
+      <topic>Pandas</topic>
+      <topic>Data Visualization</topic>
+      <topic>Descriptive Analytics</topic>
+    </topics>
+  </course>
+
+  <course>
+    <code>TDS6323</code>
+    <title>Advanced Data Mining</title>
+    <domain>DataScience</domain>
+    <credits>3</credits>
+    <prerequisite>TDS6223</prerequisite>
+    <yearOffered>Year 3 Trimester 1</yearOffered>
+    <level>Level 6</level>
+    <clos>
+      <clo>CLO2</clo>
+      <clo>CLO3</clo>
+    </clos>
+    <topics>
+      <topic>Classification Algorithms</topic>
+      <topic>Clustering Techniques</topic>
+      <topic>Pattern Discovery</topic>
+    </topics>
+  </course>
+</courses>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF
+   xmlns:cs="http://example.org/courses#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+>
+  <rdf:Description rdf:about="http://example.org/courses#TDS6223">
+    <cs:code>TDS6223</cs:code>
+    <cs:title>Data Analytics with Python</cs:title>
+    <cs:hasDomain rdf:resource="http://example.org/courses#DataScience"/>
+    <cs:credits>3</cs:credits>
+    <cs:yearOffered>Year 2 Trimester 2</cs:yearOffered>
+    <cs:level>Level 6</cs:level>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/courses#TML6223">
+    <cs:code>TML6223</cs:code>
+    <cs:title>Machine Learning</cs:title>
+    <cs:hasDomain rdf:resource="http://example.org/courses#ArtificialIntelligence"/>
+    <cs:hasPrerequisite rdf:resource="http://example.org/courses#TCP6114"/>
+    <cs:credits>3</cs:credits>
+    <cs:yearOffered>Year 2 Trimester 2</cs:yearOffered>
+    <cs:level>Level 6</cs:level>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/courses#TDS6323">
+    <cs:code>TDS6323</cs:code>
+    <cs:title>Advanced Data Mining</cs:title>
+    <cs:hasDomain rdf:resource="http://example.org/courses#DataScience"/>
+    <cs:hasPrerequisite rdf:resource="http://example.org/courses#TDS6223"/>
+    <cs:credits>3</cs:credits>
+    <cs:yearOffered>Year 3 Trimester 1</cs:yearOffered>
+    <cs:level>Level 6</cs:level>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/courses#TSW6223">
+    <cs:code>TSW6223</cs:code>
+    <cs:title>Semantic Web Technology</cs:title>
+    <cs:hasDomain rdf:resource="http://example.org/courses#ArtificialIntelligence"/>
+    <cs:credits>3</cs:credits>
+    <cs:yearOffered>Year 2 Trimester 2</cs:yearOffered>
+    <cs:level>Level 6</cs:level>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/courses#TSE6101">
+    <cs:code>TSE6101</cs:code>
+    <cs:title>Software Engineering Fundamentals</cs:title>
+    <cs:hasDomain rdf:resource="http://example.org/courses#SoftwareEngineering"/>
+    <cs:credits>3</cs:credits>
+    <cs:yearOffered>Year 2 Trimester 1</cs:yearOffered>
+    <cs:level>Level 5</cs:level>
+  </rdf:Description>
+</rdf:RDF>

@@ -1,0 +1,12 @@
+PREFIX cs: <http://example.org/courses#>
+
+SELECT ?courseCode ?courseTitle ?courseURI ?credits ?yearOffered ?level
+WHERE {
+    ?courseURI cs:hasDomain cs:__INTEREST__ ;
+               cs:code ?courseCode ;
+               cs:title ?courseTitle ;
+               cs:credits ?credits ;
+               cs:yearOffered ?yearOffered ;
+               cs:level ?level .
+}
+ORDER BY ?courseCode
