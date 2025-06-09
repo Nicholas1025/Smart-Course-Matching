@@ -1,8 +1,8 @@
 PREFIX cs: <http://example.org/courses#>
 
-SELECT ?prereqCode ?prereqTitle
+SELECT ?prereqCode ?prereqName
 WHERE {
-    <__COURSE_URI__> cs:hasPrerequisite ?prereq .
+    <__COURSE_URI__> cs:prerequisite ?prereq .
     ?prereq cs:code ?prereqCode ;
-            cs:title ?prereqTitle .
+            cs:name ?prereqName .
 }

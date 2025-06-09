@@ -1,12 +1,18 @@
 PREFIX cs: <http://example.org/courses#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 
-SELECT ?courseCode ?courseTitle ?courseURI ?credits ?yearOffered ?level
+SELECT ?courseURI ?code ?name ?type ?synopsis ?version ?academicStaff ?semester ?credits ?prerequisite 
 WHERE {
-    ?courseURI cs:hasDomain cs:__INTEREST__ ;
-               cs:code ?courseCode ;
-               cs:title ?courseTitle ;
-               cs:credits ?credits ;
-               cs:yearOffered ?yearOffered ;
-               cs:level ?level .
-}
-ORDER BY ?courseCode
+  ?courseURI cs:code ?code ;
+             cs:name ?name ;
+             cs:type ?type ;
+             cs:synopsis ?synopsis ;
+             cs:version ?version ;
+             cs:academicStaff ?academicStaff ;
+             cs:semester ?semester ;
+             cs:credits ?credits ;
+             cs:prerequisite ?prerequisite .
+  
+  FILTER(CONTAINS(LCASE(STR(?type)), "__INTEREST__"))
+} 
+ORDER BY ?code

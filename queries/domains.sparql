@@ -1,7 +1,0 @@
-PREFIX cs: <http://example.org/courses#>
-
-SELECT DISTINCT ?domain
-WHERE {
-    ?course cs:hasDomain ?domain .
-}
-ORDER BY ?domain

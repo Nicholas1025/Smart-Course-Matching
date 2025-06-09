@@ -1,99 +1,74 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <courses>
   <course>
-    <code>TSW6223</code>
-    <title>Semantic Web Technology</title>
-    <domain>ArtificialIntelligence</domain>
+    <name>Computer Graphics</name>
+    <code>TGC6223</code>
+    <type>Specialisation for B.CS (Hons) (Artificial Intelligence)</type>
+    <synopsis>This course provides an introduction to the theory and applications of computer graphics. This course will equip students with essential concepts in computer graphics. The fundamental techniques in computer graphics are introduced, followed by the transformation, viewing, modelling, deformation, and animation. Students will be able to apply various techniques in computer graphics.</synopsis>
+    <version>Current: January 2024 (Effective Term: 2410)</version>
+    <academicStaff>Lim Kian Ming, SM Namal Arosha, Lim Jit Yan, Goh Pey Yun, Pa Pa Min, Tay Siok Wah, Ong Lee Yeng</academicStaff>
+    <semester>Trimester 2, Year 2</semester>
     <credits>3</credits>
-    <prerequisite></prerequisite>
-    <yearOffered>Year 2 Trimester 2</yearOffered>
-    <level>Level 6</level>
-    <clos>
-      <clo>CLO1</clo>
-      <clo>CLO2</clo>
-      <clo>CLO3</clo>
-    </clos>
-    <topics>
-      <topic>RDF and RDFS</topic>
-      <topic>OWL Ontology</topic>
-      <topic>SPARQL Queries</topic>
-    </topics>
+    <prerequisite>TCP6114 Computer Programming</prerequisite>
   </course>
 
   <course>
+    <name>Data Communications and Networking</name>
+    <code>TDC6123</code>
+    <type>Computing Core for B.IT (Hons) Data Communications and Networking, Security Technology, Bioinformatics, Business Intelligence and Analytics, B.CS (Hons) Artificial Intelligence</type>
+    <synopsis>By the end of study, students should be able to demonstrate knowledge and understanding of essential facts, concepts, principles, and theories relating to data communications and networking.</synopsis>
+    <version>Current: Jan 2024 (Tri 2410), Previous: Mar 2023</version>
+    <academicStaff>Wee Kuok Kwee, Nazrul Muhaimin Ahmad</academicStaff>
+    <semester>Trimester 2, Year 1</semester>
+    <credits>3</credits>
+    <prerequisite>None</prerequisite>
+  </course>
+
+  <course>
+    <name>Human Computer Interaction</name>
+    <code>THI6223</code>
+    <type>Discipline Core for: B.CS (Hons) Artificial Intelligence, B.IT (Hons) Security Technology, B.IT (Hons) Data Communications and Networking, B.IT (Hons) Business Intelligence and Analytics</type>
+    <synopsis>This course introduces a range of established and emerging theories, conceptual frameworks and methods of the human aspects of HCI. Discussing the most popular design and evaluation methods and design support tools that are available to make HCI design user-centred, including principles and methods for user centred design, requirement gathering, usability test, task analysis, user interface, interaction styles, structured HCI design and interaction design.</synopsis>
+    <version>Current: October 2023 (Effective Term: 2420), Previous: April 2022</version>
+    <academicStaff>Liew Tze Hui, Neo Han Foon</academicStaff>
+    <semester>Trimester 2, Year 2</semester>
+    <credits>3</credits>
+    <prerequisite>TCP6114 Computer Programming</prerequisite>
+  </course>
+
+  <course>
+    <name>Machine Learning</name>
     <code>TML6223</code>
-    <title>Machine Learning</title>
-    <domain>ArtificialIntelligence</domain>
+    <type>Specialisation for B.IT (Hons) Artificial Intelligence, B.CS (Hons) Artificial Intelligence</type>
+    <synopsis>This course provides an introduction to the theory and applications of machine learning. This course will equip students with essential concepts in learning algorithms. Different techniques in the three main branches of machine learning: supervised learning, unsupervised learning, and reinforcement learning, are introduced. Students will be able to apply various techniques in machine learning.</synopsis>
+    <version>Current: January 2024 (Effective Term: 2410), Previous: March 2023</version>
+    <academicStaff>Lim Kian Ming, Lee Chin Poo, Lim Jit Yan</academicStaff>
+    <semester>Trimester 2, Year 2</semester>
     <credits>3</credits>
-    <prerequisite>TCP6114</prerequisite>
-    <yearOffered>Year 2 Trimester 2</yearOffered>
-    <level>Level 6</level>
-    <clos>
-      <clo>CLO1</clo>
-      <clo>CLO2</clo>
-      <clo>CLO3</clo>
-    </clos>
-    <topics>
-      <topic>Supervised Learning</topic>
-      <topic>Unsupervised Learning</topic>
-      <topic>Ensemble Learning</topic>
-    </topics>
+    <prerequisite>TCP6114 Computer Programming</prerequisite>
   </course>
 
   <course>
-    <code>TSE6101</code>
-    <title>Software Engineering Fundamentals</title>
-    <domain>SoftwareEngineering</domain>
+    <name>Software Engineering Fundamentals</name>
+    <code>TSE6223</code>
+    <type>Discipline Core for B.CS (Hons) Artificial Intelligence</type>
+    <synopsis>This course provides a comprehensive overview of software engineering and its process, builds on experience drawn from actual practice, and guides students towards a better understanding of various disciplines, tasks, and specialties that contribute to the development of a software product.</synopsis>
+    <version>Current: January 2024, Previous: April 2022</version>
+    <academicStaff>Kalaiarasi SMA, Liew Tze Hui, Tay Siok Wah, Pa Pa Min</academicStaff>
+    <semester>Trimester 2, Year 2</semester>
     <credits>3</credits>
-    <prerequisite></prerequisite>
-    <yearOffered>Year 2 Trimester 1</yearOffered>
-    <level>Level 5</level>
-    <clos>
-      <clo>CLO1</clo>
-      <clo>CLO2</clo>
-    </clos>
-    <topics>
-      <topic>Software Lifecycle</topic>
-      <topic>UML Modelling</topic>
-      <topic>Testing Techniques</topic>
-    </topics>
+    <prerequisite>TCP6114 Computer Programming</prerequisite>
   </course>
 
   <course>
-    <code>TDS6223</code>
-    <title>Data Analytics with Python</title>
-    <domain>DataScience</domain>
+    <name>Semantic Web Technology</name>
+    <code>TSW6223</code>
+    <type>Specialisation Core for B.CS (Hons) Artificial Intelligence, B.IT (Hons) Artificial Intelligence</type>
+    <synopsis>The semantic web is an extension from the current World Wide Web (WWW). It aims to describe meaning (semantic) of the WWW contents in such a way that the semantic can be shared, reasoned with and re-used through machine-readable applications.</synopsis>
+    <version>Current: January 2024 (Effective Term: 2410), Previous: November 2021</version>
+    <academicStaff>Tan Shing Chiang, Goh Pey Yun, Namal Arosha S Senanayake</academicStaff>
+    <semester>Trimester 2, Year 2</semester>
     <credits>3</credits>
-    <prerequisite></prerequisite>
-    <yearOffered>Year 2 Trimester 2</yearOffered>
-    <level>Level 6</level>
-    <clos>
-      <clo>CLO1</clo>
-      <clo>CLO3</clo>
-    </clos>
-    <topics>
-      <topic>Pandas</topic>
-      <topic>Data Visualization</topic>
-      <topic>Descriptive Analytics</topic>
-    </topics>
-  </course>
-
-  <course>
-    <code>TDS6323</code>
-    <title>Advanced Data Mining</title>
-    <domain>DataScience</domain>
-    <credits>3</credits>
-    <prerequisite>TDS6223</prerequisite>
-    <yearOffered>Year 3 Trimester 1</yearOffered>
-    <level>Level 6</level>
-    <clos>
-      <clo>CLO2</clo>
-      <clo>CLO3</clo>
-    </clos>
-    <topics>
-      <topic>Classification Algorithms</topic>
-      <topic>Clustering Techniques</topic>
-      <topic>Pattern Discovery</topic>
-    </topics>
+    <prerequisite>None</prerequisite>
   </course>
 </courses>

@@ -42,44 +42,41 @@ def load_ontology():
         return False
 
 def normalize_interest(interest):
-    """Normalize user interest input for URI construction"""
-    # Remove spaces, hyphens, and convert to proper case
-    normalized = interest.replace(" ", "").replace("-", "")
-    # Capitalize first letter of each word for consistency
-    words = []
-    current_word = ""
-    
-    for char in normalized:
-        if char.isupper() and current_word:
-            words.append(current_word)
-            current_word = char
-        else:
-            current_word += char
-    
-    if current_word:
-        words.append(current_word)
-    
-    # Join words with proper capitalization
-    return ''.join([word.capitalize() for word in words])
+    return interest.strip()
+
 
 def build_sparql_query(interest):
-    """Build SPARQL query by loading from external file and replacing interest"""
-    normalized_interest = normalize_interest(interest)
     sparql_path = os.path.join("queries", "recommend.sparql")
-    
+
     try:
         with open(sparql_path, "r", encoding="utf-8") as f:
             template = f.read()
-        
-        query = template.replace("__INTEREST__", normalized_interest)
-        
-        logger.info(f"SPARQL Query for '{interest}' (normalized: '{normalized_interest}'):")
-        logger.info(query)
+
+        interest_lower = interest.lower()
+
+        keyword_map = {
+            "artificial intelligence": "artificial intelligence",
+            "security technology": "security technology",
+            "data communications": "data communications and networking",
+            "bioinformatics": "bioinformatics",
+            "business intelligence and analytics": "business intelligence and analytics"
+        }
+
+        keyword = ""
+        for full, short in keyword_map.items():
+            if full in interest_lower:
+                keyword = short
+                break
+
+        if not keyword:
+            keyword = " ".join(interest_lower.split()[-2:])
+
+        # ✅ 最终核心修正：转换为正则表达式
+        query = template.replace("__INTEREST__", keyword.lower())
+
+        logger.info(f"[DEBUG] Final SPARQL query:\n{query}")
         return query
-    
-    except FileNotFoundError:
-        logger.error(f"SPARQL file not found: {sparql_path}")
-        return ""
+
     except Exception as e:
         logger.error(f"Failed to load SPARQL query: {e}")
         return ""
@@ -99,15 +96,23 @@ def execute_sparql_query(interest):
         courses = []
         for row in results:
             course_data = {
-                'code': str(row.courseCode),
-                'title': str(row.courseTitle),
                 'uri': str(row.courseURI),
+                'code': str(row.code),
+                'name': str(row.name),
+                'type': str(row.type),
+                'synopsis': str(row.synopsis),
+                'version': str(row.version),
+                'academicStaff': str(row.academicStaff),
+                'semester': str(row.semester),
                 'credits': str(row.credits),
-                'yearOffered': str(row.yearOffered),
-                'level': str(row.level)
+                'prerequisite': str(row.prerequisite)
             }
             courses.append(course_data)
-        
+
+        logger.info(f"[DEBUG] User selected interest: {interest}")
+        logger.info(f"[DEBUG] Normalized interest: {normalize_interest(interest)}")
+        logger.info(f"[DEBUG] Injected keyword into query: {build_sparql_query(interest)}")
+
         logger.info(f"Found {len(courses)} courses for interest: {interest}")
         return courses
     
@@ -115,42 +120,54 @@ def execute_sparql_query(interest):
         logger.error(f"Error executing SPARQL query: {str(e)}")
         return []
 
-def get_available_domains():
-    """Get all available interest domains from the ontology using external SPARQL file"""
+def get_available_types():
+    """Extract unique course programs from RDF cs:type"""
     global graph
-    
     if not graph:
         return []
-    
-    sparql_path = os.path.join("queries", "domains.sparql")
-    
+
+    sparql_path = os.path.join("queries", "types.sparql")
     try:
         with open(sparql_path, "r", encoding="utf-8") as f:
             query = f.read()
-        
         results = graph.query(query)
-        domains = []
-        
+
+        types = set()
+
         for row in results:
-            domain_uri = str(row.domain)
-            # Extract domain name from URI
-            domain_name = domain_uri.replace("http://example.org/courses#", "")
-            # Add spaces to camelCase for better readability
-            readable_name = ''.join([' ' + c if c.isupper() and i > 0 else c 
-                                   for i, c in enumerate(domain_name)])
-            domains.append({
-                'name': domain_name,
-                'readable': readable_name.strip()
-            })
-        
-        return domains
-    
-    except FileNotFoundError:
-        logger.error(f"SPARQL file not found: {sparql_path}")
-        return []
+            type_value = str(row.type)
+
+            # Extract after "for" if exists
+            if "for" in type_value:
+                specialization_str = type_value.split("for", 1)[1].strip()
+
+                # ✅ Smart split based on known full program names
+                known_programs = [
+                    "B.CS (Hons) Artificial Intelligence",
+                    "B.IT (Hons) Artificial Intelligence",
+                    "B.IT (Hons) Data Communications and Networking",
+                    "B.IT (Hons) Security Technology",
+                    "B.Sc (Hons) Bioinformatics",
+                    "B.IT (Hons) Business Intelligence and Analytics"
+                ]
+
+                for prog in known_programs:
+                    if prog in specialization_str:
+                        types.add(prog)
+
+            else:
+                clean = type_value.strip()
+                if clean:
+                    types.add(clean)
+
+        return sorted(types)
+
     except Exception as e:
-        logger.error(f"Error getting domains: {str(e)}")
+        logger.error(f"Error retrieving course types: {e}")
         return []
+
+
+
 
 def get_course_prerequisites(course_uri):
     """Get prerequisites for a specific course using external SPARQL file"""
@@ -188,8 +205,9 @@ def get_course_prerequisites(course_uri):
 @app.route('/')
 def index():
     """Home page with search form"""
-    domains = get_available_domains()
-    return render_template('index.html', domains=domains)
+    types = get_available_types()
+    return render_template('index.html', types=types)
+
 
 @app.route('/search', methods=['POST'])
 def search():
@@ -197,23 +215,21 @@ def search():
     interest = request.form.get('interest', '').strip()
     
     if not interest:
-        flash('Please enter an interest domain.', 'error')
+        flash('Please select a course type.', 'error')
         return redirect(url_for('index'))
     
-    # Execute SPARQL query
     courses = execute_sparql_query(interest)
     
-    # Add prerequisites to each course
     for course in courses:
         course['prerequisites'] = get_course_prerequisites(course['uri'])
     
-    # Get available domains for the search form
-    domains = get_available_domains()
+    types = get_available_types()
     
     return render_template('results.html', 
-                         courses=courses, 
-                         interest=interest,
-                         domains=domains)
+                           courses=courses, 
+                           interest=interest,
+                           types=types)
+
 
 @app.route('/api/search')
 def api_search():
@@ -235,11 +251,12 @@ def api_search():
         'total': len(courses)
     })
 
-@app.route('/api/domains')
-def api_domains():
-    """API endpoint to get available domains"""
-    domains = get_available_domains()
-    return jsonify({'domains': domains})
+@app.route('/api/types')
+def api_types():
+    """API endpoint to get available course types"""
+    types = get_available_types()
+    return jsonify({'types': types})
+
 
 @app.route('/health')
 def health_check():
@@ -274,7 +291,7 @@ def check_sparql_files():
     """Check if all required SPARQL files exist"""
     required_files = [
         "queries/recommend.sparql",
-        "queries/domains.sparql", 
+        "queries/types.sparql", 
         "queries/prerequisites.sparql"
     ]
     

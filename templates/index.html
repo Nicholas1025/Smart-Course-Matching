@@ -12,19 +12,21 @@
 
   <h1 class="mb-4 text-primary">Smart Course Matching System</h1>
 
-  <form action="{{ url_for('search') }}" method="post" class="row g-3">
-    <div class="col-md-6">
-      <label for="interest" class="form-label">Select your interest domain:</label>
-      <select class="form-select" name="interest" id="interest">
-        {% for domain in domains %}
-          <option value="{{ domain.name }}">{{ domain.readable }}</option>
-        {% endfor %}
-      </select>
-    </div>
-    <div class="col-md-2 align-self-end">
-      <button type="submit" class="btn btn-primary">Find Courses</button>
-    </div>
-  </form>
+<form action="{{ url_for('search') }}" method="post" class="row g-3">
+  <div class="col-md-6">
+    <label for="interest" class="form-label">Select Course Type:</label>
+    <select class="form-select" name="interest" id="interest">
+      {% for type in types %}
+        <option value="{{ type }}">{{ type }}</option>
+      {% endfor %}
+    </select>
+  </div>
+  <div class="col-md-2 align-self-end">
+    <button type="submit" class="btn btn-primary">Find Courses</button>
+  </div>
+</form>
+
+
 
   {% with messages = get_flashed_messages(with_categories=true) %}
     {% if messages %}

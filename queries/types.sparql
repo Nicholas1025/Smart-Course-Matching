@@ -1,0 +1,7 @@
+PREFIX cs: <http://example.org/courses#>
+
+SELECT DISTINCT ?type
+WHERE {
+  ?course cs:type ?type .
+}
+ORDER BY ?type
