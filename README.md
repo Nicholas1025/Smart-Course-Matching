@@ -49,8 +49,8 @@ A semantic web–powered academic recommendation system that helps students find
 
 3. (Optional) Create virtual environment:
    python -m venv venv
-   source venv/bin/activate  # on macOS/Linux
    venv\Scripts\activate     # on Windows
+   source venv/bin/activate  # on macOS/Linux
 
 4. Install dependencies:
    pip install -r requirements.txt

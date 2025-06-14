@@ -9,6 +9,8 @@ from flask import Flask, render_template, request, flash, redirect, url_for, jso
 from rdflib import Graph, Namespace
 import os
 import logging
+import threading
+import webbrowser
 
 # Configure logging
 logging.basicConfig(level=logging.INFO)
@@ -176,7 +178,6 @@ def get_available_types():
                 known_programs = [
                     # Computing Programs
                     "B.CS (Hons) Artificial Intelligence",
-                    "B.IT (Hons) Artificial Intelligence", 
                     "B.IT (Hons) Data Communications and Networking",
                     "B.IT (Hons) Security Technology",
                     "B.Sc (Hons) Bioinformatics",
@@ -474,10 +475,9 @@ def init_app():
     return True
 
 if __name__ == '__main__':
-    # Initialize the app
     if init_app():
-        # Run the Flask development server
-        app.run(debug=True, host='0.0.0.0', port=5000)
+        threading.Timer(1.0, lambda: webbrowser.open("http://localhost:5000")).start()
+        app.run(debug=True, host='0.0.0.0', port=5000, use_reloader=False)
     else:
         logger.error("Failed to initialize application. Exiting...")
         exit(1)
