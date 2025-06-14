@@ -2,6 +2,7 @@
 """
 Smart Course Matching System - Flask Application
 Integrates RDF data processing with SPARQL queries for course recommendations
+Updated to support Computing, Business, and Law departments
 """
 
 from flask import Flask, render_template, request, flash, redirect, url_for, jsonify
@@ -44,7 +45,6 @@ def load_ontology():
 def normalize_interest(interest):
     return interest.strip()
 
-
 def build_sparql_query(interest):
     sparql_path = os.path.join("queries", "recommend.sparql")
 
@@ -54,12 +54,43 @@ def build_sparql_query(interest):
 
         interest_lower = interest.lower()
 
+        # Updated keyword mapping to include Business and Law programs
         keyword_map = {
+            # Computing Department
             "artificial intelligence": "artificial intelligence",
-            "security technology": "security technology",
+            "security technology": "security technology", 
             "data communications": "data communications and networking",
             "bioinformatics": "bioinformatics",
-            "business intelligence and analytics": "business intelligence and analytics"
+            "business intelligence and analytics": "business intelligence and analytics",
+            "computer graphics": "computer graphics",
+            "database systems": "database",
+            "cybersecurity": "cybersecurity",
+            "web development": "web development",
+            "data mining": "data mining",
+            
+            # Business Department
+            "business administration": "business administration",
+            "accounting": "accounting",
+            "management": "management",
+            "marketing": "marketing",
+            "finance": "finance",
+            "human resource": "human resource",
+            "operations management": "operations",
+            "strategic management": "strategic",
+            "international business": "international business",
+            
+            # Law Department
+            "law": "law",
+            "legal studies": "legal",
+            "constitutional law": "constitutional",
+            "contract law": "contract",
+            "criminal law": "criminal",
+            "tort law": "tort",
+            "administrative law": "administrative",
+            "corporate law": "corporate",
+            "intellectual property": "intellectual property",
+            "family law": "family",
+            "environmental law": "environmental"
         }
 
         keyword = ""
@@ -68,10 +99,11 @@ def build_sparql_query(interest):
                 keyword = short
                 break
 
+        # Fallback: use last two words if no specific mapping found
         if not keyword:
             keyword = " ".join(interest_lower.split()[-2:])
 
-        # ✅ 最终核心修正：转换为正则表达式
+        # Replace placeholder in SPARQL template
         query = template.replace("__INTEREST__", keyword.lower())
 
         logger.info(f"[DEBUG] Final SPARQL query:\n{query}")
@@ -105,14 +137,13 @@ def execute_sparql_query(interest):
                 'academicStaff': str(row.academicStaff),
                 'semester': str(row.semester),
                 'credits': str(row.credits),
-                'prerequisite': str(row.prerequisite)
+                'prerequisite': str(row.prerequisite),
+                'department': str(row.department) if hasattr(row, 'department') else 'Unknown'
             }
             courses.append(course_data)
 
         logger.info(f"[DEBUG] User selected interest: {interest}")
         logger.info(f"[DEBUG] Normalized interest: {normalize_interest(interest)}")
-        logger.info(f"[DEBUG] Injected keyword into query: {build_sparql_query(interest)}")
-
         logger.info(f"Found {len(courses)} courses for interest: {interest}")
         return courses
     
@@ -121,7 +152,7 @@ def execute_sparql_query(interest):
         return []
 
 def get_available_types():
-    """Extract unique course programs from RDF cs:type"""
+    """Extract unique course programs from RDF cs:type - updated for all departments"""
     global graph
     if not graph:
         return []
@@ -141,14 +172,22 @@ def get_available_types():
             if "for" in type_value:
                 specialization_str = type_value.split("for", 1)[1].strip()
 
-                # ✅ Smart split based on known full program names
+                # Updated known programs to include Business and Law
                 known_programs = [
+                    # Computing Programs
                     "B.CS (Hons) Artificial Intelligence",
-                    "B.IT (Hons) Artificial Intelligence",
+                    "B.IT (Hons) Artificial Intelligence", 
                     "B.IT (Hons) Data Communications and Networking",
                     "B.IT (Hons) Security Technology",
                     "B.Sc (Hons) Bioinformatics",
-                    "B.IT (Hons) Business Intelligence and Analytics"
+                    "B.IT (Hons) Business Intelligence and Analytics",
+                    
+                    # Business Programs
+                    "B.BA (Hons) Business Administration",
+                    "B.ACC (Hons) Accounting",
+                    
+                    # Law Programs
+                    "LLB (Hons) Law"
                 ]
 
                 for prog in known_programs:
@@ -166,8 +205,81 @@ def get_available_types():
         logger.error(f"Error retrieving course types: {e}")
         return []
 
+def get_departments():
+    """Get available departments"""
+    global graph
+    if not graph:
+        return []
+    
+    try:
+        # SPARQL query to get distinct departments
+        query = """
+        PREFIX cs: <http://example.org/courses#>
+        SELECT DISTINCT ?department
+        WHERE {
+            ?course cs:department ?department .
+        }
+        ORDER BY ?department
+        """
+        
+        results = graph.query(query)
+        departments = [str(row.department) for row in results]
+        return departments
+        
+    except Exception as e:
+        logger.error(f"Error retrieving departments: {e}")
+        return ['Computing', 'Business', 'Law']  # Fallback
 
-
+def get_courses_by_department(department):
+    """Get courses filtered by department"""
+    global graph
+    if not graph:
+        return []
+    
+    try:
+        query = f"""
+        PREFIX cs: <http://example.org/courses#>
+        SELECT ?courseURI ?code ?name ?type ?synopsis ?version ?academicStaff ?semester ?credits ?prerequisite ?department
+        WHERE {{
+            ?courseURI cs:code ?code ;
+                      cs:name ?name ;
+                      cs:type ?type ;
+                      cs:synopsis ?synopsis ;
+                      cs:version ?version ;
+                      cs:academicStaff ?academicStaff ;
+                      cs:semester ?semester ;
+                      cs:credits ?credits ;
+                      cs:prerequisite ?prerequisite ;
+                      cs:department ?department .
+            FILTER(?department = "{department}")
+        }}
+        ORDER BY ?code
+        """
+        
+        results = graph.query(query)
+        courses = []
+        
+        for row in results:
+            course_data = {
+                'uri': str(row.courseURI),
+                'code': str(row.code),
+                'name': str(row.name),
+                'type': str(row.type),
+                'synopsis': str(row.synopsis),
+                'version': str(row.version),
+                'academicStaff': str(row.academicStaff),
+                'semester': str(row.semester),
+                'credits': str(row.credits),
+                'prerequisite': str(row.prerequisite),
+                'department': str(row.department)
+            }
+            courses.append(course_data)
+        
+        return courses
+        
+    except Exception as e:
+        logger.error(f"Error getting courses by department: {e}")
+        return []
 
 def get_course_prerequisites(course_uri):
     """Get prerequisites for a specific course using external SPARQL file"""
@@ -206,8 +318,8 @@ def get_course_prerequisites(course_uri):
 def index():
     """Home page with search form"""
     types = get_available_types()
-    return render_template('index.html', types=types)
-
+    departments = get_departments()
+    return render_template('index.html', types=types, departments=departments)
 
 @app.route('/search', methods=['POST'])
 def search():
@@ -224,12 +336,28 @@ def search():
         course['prerequisites'] = get_course_prerequisites(course['uri'])
     
     types = get_available_types()
+    departments = get_departments()
     
     return render_template('results.html', 
                            courses=courses, 
                            interest=interest,
-                           types=types)
+                           types=types,
+                           departments=departments)
 
+@app.route('/department/<department_name>')
+def department_courses(department_name):
+    """Show courses by department"""
+    courses = get_courses_by_department(department_name)
+    
+    for course in courses:
+        course['prerequisites'] = get_course_prerequisites(course['uri'])
+    
+    departments = get_departments()
+    
+    return render_template('department.html',
+                          courses=courses,
+                          department=department_name,
+                          departments=departments)
 
 @app.route('/api/search')
 def api_search():
@@ -257,6 +385,26 @@ def api_types():
     types = get_available_types()
     return jsonify({'types': types})
 
+@app.route('/api/departments')
+def api_departments():
+    """API endpoint to get available departments"""
+    departments = get_departments()
+    return jsonify({'departments': departments})
+
+@app.route('/api/department/<department_name>')
+def api_department_courses(department_name):
+    """API endpoint to get courses by department"""
+    courses = get_courses_by_department(department_name)
+    
+    # Add prerequisites to each course
+    for course in courses:
+        course['prerequisites'] = get_course_prerequisites(course['uri'])
+    
+    return jsonify({
+        'department': department_name,
+        'courses': courses,
+        'total': len(courses)
+    })
 
 @app.route('/health')
 def health_check():
@@ -266,7 +414,8 @@ def health_check():
     status = {
         'status': 'healthy' if graph else 'unhealthy',
         'graph_loaded': graph is not None,
-        'triples_count': len(graph) if graph else 0
+        'triples_count': len(graph) if graph else 0,
+        'departments': get_departments() if graph else []
     }
     
     return jsonify(status)
@@ -321,6 +470,7 @@ def init_app():
         return False
     
     logger.info("Application initialized successfully!")
+    logger.info(f"Available departments: {get_departments()}")
     return True
 
 if __name__ == '__main__':

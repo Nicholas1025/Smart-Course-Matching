@@ -3,16 +3,82 @@
    xmlns:cs="http://example.org/courses#"
    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
 >
-  <rdf:Description rdf:about="http://example.org/courses#TSE6223">
-    <cs:code>TSE6223</cs:code>
-    <cs:name>Software Engineering Fundamentals</cs:name>
-    <cs:type>Discipline Core for B.CS (Hons) Artificial Intelligence</cs:type>
-    <cs:synopsis>This course provides a comprehensive overview of software engineering and its process, builds on experience drawn from actual practice, and guides students towards a better understanding of various disciplines, tasks, and specialties that contribute to the development of a software product.</cs:synopsis>
-    <cs:version>Current: January 2024, Previous: April 2022</cs:version>
-    <cs:academicStaff>Kalaiarasi SMA, Liew Tze Hui, Tay Siok Wah, Pa Pa Min</cs:academicStaff>
+  <rdf:Description rdf:about="http://example.org/courses#BFN6223">
+    <cs:code>BFN6223</cs:code>
+    <cs:name>Corporate Finance</cs:name>
+    <cs:type>Specialisation for B.BA (Hons) Business Administration, B.ACC (Hons) Accounting</cs:type>
+    <cs:synopsis>This course examines corporate financial management including capital budgeting, capital structure decisions, dividend policy, and working capital management. Students will analyze financial markets and learn to make optimal financing and investment decisions.</cs:synopsis>
+    <cs:version>Current: January 2024 (Effective Term: 2410)</cs:version>
+    <cs:academicStaff>Dr. Lee Chee Keong, CFA John Tan, Dr. Priya Sharma</cs:academicStaff>
     <cs:semester>Trimester 2, Year 2</cs:semester>
     <cs:credits>3</cs:credits>
-    <cs:prerequisite>TCP6114 Computer Programming</cs:prerequisite>
+    <cs:prerequisite>BAC6113 Financial Accounting</cs:prerequisite>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/courses#LCR6223">
+    <cs:code>LCR6223</cs:code>
+    <cs:name>Criminal Law</cs:name>
+    <cs:type>Core for LLB (Hons) Law</cs:type>
+    <cs:synopsis>This course examines the principles of criminal law including elements of crimes, defenses, and criminal procedure. Students will study various categories of crimes and analyze the relationship between criminal law and society.</cs:synopsis>
+    <cs:version>Current: January 2024 (Effective Term: 2410)</cs:version>
+    <cs:academicStaff>Prof. Dato' Azman Ibrahim, Dr. Wong Kah Meng, Public Prosecutor Farah Nadia</cs:academicStaff>
+    <cs:semester>Trimester 2, Year 2</cs:semester>
+    <cs:credits>3</cs:credits>
+    <cs:prerequisite>LCL6223 Constitutional Law</cs:prerequisite>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/courses#BAC6113">
+    <cs:code>BAC6113</cs:code>
+    <cs:name>Financial Accounting</cs:name>
+    <cs:type>Core for B.ACC (Hons) Accounting, B.BA (Hons) Business Administration</cs:type>
+    <cs:synopsis>This course introduces students to the fundamentals of financial accounting including the accounting cycle, financial statements preparation, and basic accounting principles. Students will learn to record business transactions and prepare financial reports according to accounting standards.</cs:synopsis>
+    <cs:version>Current: January 2024 (Effective Term: 2410)</cs:version>
+    <cs:academicStaff>Dr. Chong Ah Kow, CPA Sarah Lim, Dr. Raj Kumar</cs:academicStaff>
+    <cs:semester>Trimester 1, Year 1</cs:semester>
+    <cs:credits>3</cs:credits>
+    <cs:prerequisite>None</cs:prerequisite>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/courses#TCS6223">
+    <cs:code>TCS6223</cs:code>
+    <cs:name>Cybersecurity Fundamentals</cs:name>
+    <cs:type>Specialisation for B.IT (Hons) Security Technology</cs:type>
+    <cs:synopsis>This course provides a comprehensive introduction to cybersecurity principles, threat analysis, risk management, and security controls. Students will learn about various types of cyber threats, security policies, cryptography basics, and incident response procedures.</cs:synopsis>
+    <cs:version>Current: January 2024 (Effective Term: 2410)</cs:version>
+    <cs:academicStaff>Ahmad Nazrul Muhaimin, Wong Kok Seng, Lim Swee Cheng</cs:academicStaff>
+    <cs:semester>Trimester 1, Year 2</cs:semester>
+    <cs:credits>3</cs:credits>
+    <cs:prerequisite>TDC6123 Data Communications and Networking</cs:prerequisite>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/courses#LLS6113">
+    <cs:code>LLS6113</cs:code>
+    <cs:name>Introduction to Legal Studies</cs:name>
+    <cs:type>Core for LLB (Hons) Law</cs:type>
+    <cs:synopsis>This foundational course introduces students to the legal system, sources of law, legal reasoning, and basic legal concepts. Students will develop understanding of how law functions in society and learn fundamental legal research and writing skills.</cs:synopsis>
+    <cs:version>Current: January 2024 (Effective Term: 2410)</cs:version>
+    <cs:academicStaff>Prof. Dato' Ahmad Zakaria, Dr. Loh Siew Ping, Barrister James Wong</cs:academicStaff>
+    <cs:semester>Trimester 1, Year 1</cs:semester>
+    <cs:credits>3</cs:credits>
+    <cs:prerequisite>None</cs:prerequisite>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/courses#BSM6323">
+    <cs:code>BSM6323</cs:code>
+    <cs:name>Strategic Management</cs:name>
+    <cs:type>Capstone for B.BA (Hons) Business Administration</cs:type>
+    <cs:synopsis>This capstone course integrates knowledge from various business disciplines to analyze strategic management issues. Students will learn about competitive analysis, strategic planning, implementation, and evaluation in dynamic business environments.</cs:synopsis>
+    <cs:version>Current: January 2024 (Effective Term: 2410)</cs:version>
+    <cs:academicStaff>Prof. Lim Boon Huat, Dr. Tan Siew Leng, Dr. Ahmad Fauzi</cs:academicStaff>
+    <cs:semester>Trimester 3, Year 3</cs:semester>
+    <cs:credits>3</cs:credits>
+    <cs:prerequisite>BFN6223 Corporate Finance, BMK6223 Marketing Management</cs:prerequisite>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/courses#BMG6113">
+    <cs:code>BMG6113</cs:code>
+    <cs:name>Principles of Management</cs:name>
+    <cs:type>Core for B.BA (Hons) Business Administration, B.ACC (Hons) Accounting</cs:type>
+    <cs:synopsis>This course provides students with fundamental knowledge of management principles and practices. Topics include planning, organizing, leading, and controlling organizational resources. Students will learn about management theories, organizational behavior, and strategic decision-making processes.</cs:synopsis>
+    <cs:version>Current: January 2024 (Effective Term: 2410)</cs:version>
+    <cs:academicStaff>Dr. Tan Siew Leng, Prof. Lim Boon Huat, Dr. Wong Mei Ling</cs:academicStaff>
+    <cs:semester>Trimester 1, Year 1</cs:semester>
+    <cs:credits>3</cs:credits>
+    <cs:prerequisite>None</cs:prerequisite>
   </rdf:Description>
   <rdf:Description rdf:about="http://example.org/courses#TDC6123">
     <cs:code>TDC6123</cs:code>
@@ -25,6 +91,61 @@
     <cs:credits>3</cs:credits>
     <cs:prerequisite>None</cs:prerequisite>
   </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/courses#LCO6323">
+    <cs:code>LCO6323</cs:code>
+    <cs:name>Corporate Law</cs:name>
+    <cs:type>Specialisation for LLB (Hons) Law</cs:type>
+    <cs:synopsis>This course covers the formation, management, and dissolution of corporations including directors' duties, shareholders' rights, corporate governance, and securities regulation. Students will analyze corporate structures and legal issues in business operations.</cs:synopsis>
+    <cs:version>Current: January 2024 (Effective Term: 2410)</cs:version>
+    <cs:academicStaff>Dr. Tan Kok Wah, Corporate Counsel Lisa Ng, Prof. Suresh Nair</cs:academicStaff>
+    <cs:semester>Trimester 2, Year 3</cs:semester>
+    <cs:credits>3</cs:credits>
+    <cs:prerequisite>LCT6223 Contract Law</cs:prerequisite>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/courses#BHR6223">
+    <cs:code>BHR6223</cs:code>
+    <cs:name>Human Resource Management</cs:name>
+    <cs:type>Specialisation for B.BA (Hons) Business Administration</cs:type>
+    <cs:synopsis>This course covers human resource management practices including recruitment, selection, training, performance management, compensation, and employee relations. Students will learn about strategic HR management and its impact on organizational effectiveness.</cs:synopsis>
+    <cs:version>Current: October 2023 (Effective Term: 2420)</cs:version>
+    <cs:academicStaff>Dr. Amelia Tan, Prof. David Lim, Ms. Rashidah Ahmad</cs:academicStaff>
+    <cs:semester>Trimester 3, Year 2</cs:semester>
+    <cs:credits>3</cs:credits>
+    <cs:prerequisite>BMG6113 Principles of Management</cs:prerequisite>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/courses#BIB6223">
+    <cs:code>BIB6223</cs:code>
+    <cs:name>International Business</cs:name>
+    <cs:type>Elective for B.BA (Hons) Business Administration</cs:type>
+    <cs:synopsis>This course examines the challenges and opportunities of conducting business across national boundaries. Topics include international trade theory, foreign exchange markets, cultural considerations, and global business strategies.</cs:synopsis>
+    <cs:version>Current: October 2023 (Effective Term: 2420)</cs:version>
+    <cs:academicStaff>Dr. Maria Rodriguez, Prof. Hiroshi Tanaka, Dr. Siti Nurhaliza</cs:academicStaff>
+    <cs:semester>Trimester 2, Year 3</cs:semester>
+    <cs:credits>3</cs:credits>
+    <cs:prerequisite>BMG6113 Principles of Management</cs:prerequisite>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/courses#LIP6323">
+    <cs:code>LIP6323</cs:code>
+    <cs:name>Intellectual Property Law</cs:name>
+    <cs:type>Elective for LLB (Hons) Law</cs:type>
+    <cs:synopsis>This course examines the protection of intellectual property including patents, trademarks, copyrights, and trade secrets. Students will learn about the acquisition, enforcement, and commercialization of intellectual property rights in the digital age.</cs:synopsis>
+    <cs:version>Current: January 2024 (Effective Term: 2410)</cs:version>
+    <cs:academicStaff>Dr. Priya Devi, Patent Attorney Michael Lim, Dr. Azizah Rahman</cs:academicStaff>
+    <cs:semester>Trimester 3, Year 3</cs:semester>
+    <cs:credits>3</cs:credits>
+    <cs:prerequisite>LCT6223 Contract Law</cs:prerequisite>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/courses#LEL6323">
+    <cs:code>LEL6323</cs:code>
+    <cs:name>Environmental Law</cs:name>
+    <cs:type>Elective for LLB (Hons) Law</cs:type>
+    <cs:synopsis>This course examines legal frameworks for environmental protection including pollution control, natural resource management, and climate change law. Students will analyze the role of law in addressing environmental challenges and sustainable development.</cs:synopsis>
+    <cs:version>Current: January 2024 (Effective Term: 2410)</cs:version>
+    <cs:academicStaff>Dr. Green Lim, Environmental Advocate Dato' Seri Anuar, Prof. Eco Rahman</cs:academicStaff>
+    <cs:semester>Trimester 2, Year 3</cs:semester>
+    <cs:credits>3</cs:credits>
+    <cs:prerequisite>LAL6323 Administrative Law</cs:prerequisite>
+  </rdf:Description>
   <rdf:Description rdf:about="http://example.org/courses#THI6223">
     <cs:code>THI6223</cs:code>
     <cs:name>Human Computer Interaction</cs:name>
@@ -32,6 +153,28 @@
     <cs:synopsis>This course introduces a range of established and emerging theories, conceptual frameworks and methods of the human aspects of HCI. Discussing the most popular design and evaluation methods and design support tools that are available to make HCI design user-centred, including principles and methods for user centred design, requirement gathering, usability test, task analysis, user interface, interaction styles, structured HCI design and interaction design.</cs:synopsis>
     <cs:version>Current: October 2023 (Effective Term: 2420), Previous: April 2022</cs:version>
     <cs:academicStaff>Liew Tze Hui, Neo Han Foon</cs:academicStaff>
+    <cs:semester>Trimester 2, Year 2</cs:semester>
+    <cs:credits>3</cs:credits>
+    <cs:prerequisite>TCP6114 Computer Programming</cs:prerequisite>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/courses#LAL6323">
+    <cs:code>LAL6323</cs:code>
+    <cs:name>Administrative Law</cs:name>
+    <cs:type>Specialisation for LLB (Hons) Law</cs:type>
+    <cs:synopsis>This course examines the powers and duties of administrative agencies and the judicial review of administrative action. Students will study the principles of natural justice, procedural fairness, and the limits of executive power.</cs:synopsis>
+    <cs:version>Current: October 2023 (Effective Term: 2420)</cs:version>
+    <cs:academicStaff>Prof. Dato' Noriah Hashim, Dr. Chandra Mohan, Advocate Zainab Ali</cs:academicStaff>
+    <cs:semester>Trimester 1, Year 3</cs:semester>
+    <cs:credits>3</cs:credits>
+    <cs:prerequisite>LCL6223 Constitutional Law</cs:prerequisite>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/courses#TGC6223">
+    <cs:code>TGC6223</cs:code>
+    <cs:name>Computer Graphics</cs:name>
+    <cs:type>Specialisation for B.CS (Hons) (Artificial Intelligence)</cs:type>
+    <cs:synopsis>This course provides an introduction to the theory and applications of computer graphics. This course will equip students with essential concepts in computer graphics. The fundamental techniques in computer graphics are introduced, followed by the transformation, viewing, modelling, deformation, and animation. Students will be able to apply various techniques in computer graphics.</cs:synopsis>
+    <cs:version>Current: January 2024 (Effective Term: 2410)</cs:version>
+    <cs:academicStaff>Lim Kian Ming, SM Namal Arosha, Lim Jit Yan, Goh Pey Yun, Pa Pa Min, Tay Siok Wah, Ong Lee Yeng</cs:academicStaff>
     <cs:semester>Trimester 2, Year 2</cs:semester>
     <cs:credits>3</cs:credits>
     <cs:prerequisite>TCP6114 Computer Programming</cs:prerequisite>
@@ -47,13 +190,112 @@
     <cs:credits>3</cs:credits>
     <cs:prerequisite>None</cs:prerequisite>
   </rdf:Description>
-  <rdf:Description rdf:about="http://example.org/courses#TGC6223">
-    <cs:code>TGC6223</cs:code>
-    <cs:name>Computer Graphics</cs:name>
-    <cs:type>Specialisation for B.CS (Hons) (Artificial Intelligence)</cs:type>
-    <cs:synopsis>This course provides an introduction to the theory and applications of computer graphics. This course will equip students with essential concepts in computer graphics. The fundamental techniques in computer graphics are introduced, followed by the transformation, viewing, modelling, deformation, and animation. Students will be able to apply various techniques in computer graphics.</cs:synopsis>
+  <rdf:Description rdf:about="http://example.org/courses#LFL6323">
+    <cs:code>LFL6323</cs:code>
+    <cs:name>Family Law</cs:name>
+    <cs:type>Elective for LLB (Hons) Law</cs:type>
+    <cs:synopsis>This course covers legal issues relating to marriage, divorce, child custody, adoption, and domestic relations. Students will study the intersection of law and family relationships including contemporary issues in family law.</cs:synopsis>
+    <cs:version>Current: October 2023 (Effective Term: 2420)</cs:version>
+    <cs:academicStaff>Dr. Fatimah Mohd Ali, Family Court Judge Sarah Tan, Advocate Ravi Shankar</cs:academicStaff>
+    <cs:semester>Trimester 1, Year 3</cs:semester>
+    <cs:credits>3</cs:credits>
+    <cs:prerequisite>LLS6113 Introduction to Legal Studies</cs:prerequisite>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/courses#TWD6223">
+    <cs:code>TWD6223</cs:code>
+    <cs:name>Web Development</cs:name>
+    <cs:type>Elective for B.CS (Hons) Artificial Intelligence, B.IT (Hons) all programmes</cs:type>
+    <cs:synopsis>This course covers full-stack web development including HTML5, CSS3, JavaScript, server-side programming, database integration, and modern web frameworks. Students will develop practical skills in creating dynamic, responsive web applications.</cs:synopsis>
+    <cs:version>Current: October 2023 (Effective Term: 2420)</cs:version>
+    <cs:academicStaff>Neo Han Foon, Ong Lee Yeng, Tay Siok Wah</cs:academicStaff>
+    <cs:semester>Trimester 3, Year 2</cs:semester>
+    <cs:credits>3</cs:credits>
+    <cs:prerequisite>TCP6114 Computer Programming</cs:prerequisite>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/courses#LCL6223">
+    <cs:code>LCL6223</cs:code>
+    <cs:name>Constitutional Law</cs:name>
+    <cs:type>Core for LLB (Hons) Law</cs:type>
+    <cs:synopsis>This course examines the fundamental principles of constitutional law including the structure of government, separation of powers, federalism, and constitutional rights. Students will analyze landmark constitutional cases and understand the role of judiciary in constitutional interpretation.</cs:synopsis>
     <cs:version>Current: January 2024 (Effective Term: 2410)</cs:version>
-    <cs:academicStaff>Lim Kian Ming, SM Namal Arosha, Lim Jit Yan, Goh Pey Yun, Pa Pa Min, Tay Siok Wah, Ong Lee Yeng</cs:academicStaff>
+    <cs:academicStaff>Prof. Dato' Sri Rashid Hassan, Dr. Kavitha Ramasamy, Advocate Lim Chee Wah</cs:academicStaff>
+    <cs:semester>Trimester 2, Year 1</cs:semester>
+    <cs:credits>3</cs:credits>
+    <cs:prerequisite>LLS6113 Introduction to Legal Studies</cs:prerequisite>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/courses#LTL6223">
+    <cs:code>LTL6223</cs:code>
+    <cs:name>Tort Law</cs:name>
+    <cs:type>Core for LLB (Hons) Law</cs:type>
+    <cs:synopsis>This course studies civil wrongs and remedies including negligence, defamation, nuisance, and strict liability. Students will learn about the principles of tort liability and the remedies available to victims of tortious conduct.</cs:synopsis>
+    <cs:version>Current: January 2024 (Effective Term: 2410)</cs:version>
+    <cs:academicStaff>Dr. Lim Poh Choo, Advocate Ramesh Kumar, Dr. Nurul Izzah</cs:academicStaff>
+    <cs:semester>Trimester 3, Year 2</cs:semester>
+    <cs:credits>3</cs:credits>
+    <cs:prerequisite>LCT6223 Contract Law</cs:prerequisite>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/courses#BOM6223">
+    <cs:code>BOM6223</cs:code>
+    <cs:name>Operations Management</cs:name>
+    <cs:type>Core for B.BA (Hons) Business Administration</cs:type>
+    <cs:synopsis>This course focuses on the design, operation, and improvement of production and service systems. Topics include process design, capacity planning, inventory management, quality control, and supply chain management.</cs:synopsis>
+    <cs:version>Current: January 2024 (Effective Term: 2410)</cs:version>
+    <cs:academicStaff>Dr. Chen Wei Ming, Prof. Rajesh Patel, Dr. Fatimah Zahra</cs:academicStaff>
+    <cs:semester>Trimester 1, Year 2</cs:semester>
+    <cs:credits>3</cs:credits>
+    <cs:prerequisite>BMG6113 Principles of Management</cs:prerequisite>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/courses#TDA6223">
+    <cs:code>TDA6223</cs:code>
+    <cs:name>Data Mining and Analytics</cs:name>
+    <cs:type>Specialisation for B.IT (Hons) Business Intelligence and Analytics</cs:type>
+    <cs:synopsis>This course introduces students to data mining techniques and analytics methods for extracting meaningful patterns from large datasets. Topics include data preprocessing, classification, clustering, association rules, and predictive modeling using various tools and techniques.</cs:synopsis>
+    <cs:version>Current: January 2024 (Effective Term: 2410)</cs:version>
+    <cs:academicStaff>Lee Chin Poo, Goh Pey Yun, Lim Kian Ming</cs:academicStaff>
+    <cs:semester>Trimester 3, Year 2</cs:semester>
+    <cs:credits>3</cs:credits>
+    <cs:prerequisite>TDB6223 Database Systems</cs:prerequisite>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/courses#LCT6223">
+    <cs:code>LCT6223</cs:code>
+    <cs:name>Contract Law</cs:name>
+    <cs:type>Core for LLB (Hons) Law</cs:type>
+    <cs:synopsis>This course covers the formation, terms, performance, and breach of contracts. Students will learn about offer and acceptance, consideration, capacity, legality, and remedies for breach of contract through case law analysis and practical applications.</cs:synopsis>
+    <cs:version>Current: October 2023 (Effective Term: 2420)</cs:version>
+    <cs:academicStaff>Dr. Tan Boon Keat, Advocate Siti Hajar, Dr. Rajesh Menon</cs:academicStaff>
+    <cs:semester>Trimester 1, Year 2</cs:semester>
+    <cs:credits>3</cs:credits>
+    <cs:prerequisite>LLS6113 Introduction to Legal Studies</cs:prerequisite>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/courses#BMK6223">
+    <cs:code>BMK6223</cs:code>
+    <cs:name>Marketing Management</cs:name>
+    <cs:type>Specialisation for B.BA (Hons) Business Administration</cs:type>
+    <cs:synopsis>This course covers marketing concepts, consumer behavior analysis, market segmentation, product positioning, and the marketing mix. Students will learn to develop marketing strategies and understand the role of marketing in business success.</cs:synopsis>
+    <cs:version>Current: October 2023 (Effective Term: 2420)</cs:version>
+    <cs:academicStaff>Dr. Jessica Ng, Prof. Kumar Rajesh, Ms. Lim Pei Shan</cs:academicStaff>
+    <cs:semester>Trimester 2, Year 2</cs:semester>
+    <cs:credits>3</cs:credits>
+    <cs:prerequisite>BMG6113 Principles of Management</cs:prerequisite>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/courses#TDB6223">
+    <cs:code>TDB6223</cs:code>
+    <cs:name>Database Systems</cs:name>
+    <cs:type>Discipline Core for B.CS (Hons) Artificial Intelligence, B.IT (Hons) Business Intelligence and Analytics</cs:type>
+    <cs:synopsis>This course introduces students to the fundamentals of database systems including database design, normalization, SQL programming, transaction processing, and database administration. Students will learn to design, implement, and manage relational databases effectively.</cs:synopsis>
+    <cs:version>Current: January 2024 (Effective Term: 2410)</cs:version>
+    <cs:academicStaff>Tan Wei Keong, Lim Jit Yan, Koh Tieng Wei</cs:academicStaff>
+    <cs:semester>Trimester 1, Year 2</cs:semester>
+    <cs:credits>3</cs:credits>
+    <cs:prerequisite>TCP6114 Computer Programming</cs:prerequisite>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/courses#TSE6223">
+    <cs:code>TSE6223</cs:code>
+    <cs:name>Software Engineering Fundamentals</cs:name>
+    <cs:type>Discipline Core for B.CS (Hons) Artificial Intelligence</cs:type>
+    <cs:synopsis>This course provides a comprehensive overview of software engineering and its process, builds on experience drawn from actual practice, and guides students towards a better understanding of various disciplines, tasks, and specialties that contribute to the development of a software product.</cs:synopsis>
+    <cs:version>Current: January 2024, Previous: April 2022</cs:version>
+    <cs:academicStaff>Kalaiarasi SMA, Liew Tze Hui, Tay Siok Wah, Pa Pa Min</cs:academicStaff>
     <cs:semester>Trimester 2, Year 2</cs:semester>
     <cs:credits>3</cs:credits>
     <cs:prerequisite>TCP6114 Computer Programming</cs:prerequisite>

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <courses>
+  <!-- Computing Department Courses -->
   <course>
     <name>Computer Graphics</name>
     <code>TGC6223</code>
@@ -10,6 +11,7 @@
     <semester>Trimester 2, Year 2</semester>
     <credits>3</credits>
     <prerequisite>TCP6114 Computer Programming</prerequisite>
+    <department>Computing</department>
   </course>
 
   <course>
@@ -22,6 +24,7 @@
     <semester>Trimester 2, Year 1</semester>
     <credits>3</credits>
     <prerequisite>None</prerequisite>
+    <department>Computing</department>
   </course>
 
   <course>
@@ -34,6 +37,7 @@
     <semester>Trimester 2, Year 2</semester>
     <credits>3</credits>
     <prerequisite>TCP6114 Computer Programming</prerequisite>
+    <department>Computing</department>
   </course>
 
   <course>
@@ -46,6 +50,7 @@
     <semester>Trimester 2, Year 2</semester>
     <credits>3</credits>
     <prerequisite>TCP6114 Computer Programming</prerequisite>
+    <department>Computing</department>
   </course>
 
   <course>
@@ -58,6 +63,7 @@
     <semester>Trimester 2, Year 2</semester>
     <credits>3</credits>
     <prerequisite>TCP6114 Computer Programming</prerequisite>
+    <department>Computing</department>
   </course>
 
   <course>
@@ -70,5 +76,294 @@
     <semester>Trimester 2, Year 2</semester>
     <credits>3</credits>
     <prerequisite>None</prerequisite>
+    <department>Computing</department>
+  </course>
+
+  <course>
+    <name>Database Systems</name>
+    <code>TDB6223</code>
+    <type>Discipline Core for B.CS (Hons) Artificial Intelligence, B.IT (Hons) Business Intelligence and Analytics</type>
+    <synopsis>This course introduces students to the fundamentals of database systems including database design, normalization, SQL programming, transaction processing, and database administration. Students will learn to design, implement, and manage relational databases effectively.</synopsis>
+    <version>Current: January 2024 (Effective Term: 2410)</version>
+    <academicStaff>Tan Wei Keong, Lim Jit Yan, Koh Tieng Wei</academicStaff>
+    <semester>Trimester 1, Year 2</semester>
+    <credits>3</credits>
+    <prerequisite>TCP6114 Computer Programming</prerequisite>
+    <department>Computing</department>
+  </course>
+
+  <course>
+    <name>Cybersecurity Fundamentals</name>
+    <code>TCS6223</code>
+    <type>Specialisation for B.IT (Hons) Security Technology</type>
+    <synopsis>This course provides a comprehensive introduction to cybersecurity principles, threat analysis, risk management, and security controls. Students will learn about various types of cyber threats, security policies, cryptography basics, and incident response procedures.</synopsis>
+    <version>Current: January 2024 (Effective Term: 2410)</version>
+    <academicStaff>Ahmad Nazrul Muhaimin, Wong Kok Seng, Lim Swee Cheng</academicStaff>
+    <semester>Trimester 1, Year 2</semester>
+    <credits>3</credits>
+    <prerequisite>TDC6123 Data Communications and Networking</prerequisite>
+    <department>Computing</department>
+  </course>
+
+  <course>
+    <name>Web Development</name>
+    <code>TWD6223</code>
+    <type>Elective for B.CS (Hons) Artificial Intelligence, B.IT (Hons) all programmes</type>
+    <synopsis>This course covers full-stack web development including HTML5, CSS3, JavaScript, server-side programming, database integration, and modern web frameworks. Students will develop practical skills in creating dynamic, responsive web applications.</synopsis>
+    <version>Current: October 2023 (Effective Term: 2420)</version>
+    <academicStaff>Neo Han Foon, Ong Lee Yeng, Tay Siok Wah</academicStaff>
+    <semester>Trimester 3, Year 2</semester>
+    <credits>3</credits>
+    <prerequisite>TCP6114 Computer Programming</prerequisite>
+    <department>Computing</department>
+  </course>
+
+  <course>
+    <name>Data Mining and Analytics</name>
+    <code>TDA6223</code>
+    <type>Specialisation for B.IT (Hons) Business Intelligence and Analytics</type>
+    <synopsis>This course introduces students to data mining techniques and analytics methods for extracting meaningful patterns from large datasets. Topics include data preprocessing, classification, clustering, association rules, and predictive modeling using various tools and techniques.</synopsis>
+    <version>Current: January 2024 (Effective Term: 2410)</version>
+    <academicStaff>Lee Chin Poo, Goh Pey Yun, Lim Kian Ming</academicStaff>
+    <semester>Trimester 3, Year 2</semester>
+    <credits>3</credits>
+    <prerequisite>TDB6223 Database Systems</prerequisite>
+    <department>Computing</department>
+  </course>
+
+  <!-- Business Department Courses -->
+  <course>
+    <name>Principles of Management</name>
+    <code>BMG6113</code>
+    <type>Core for B.BA (Hons) Business Administration, B.ACC (Hons) Accounting</type>
+    <synopsis>This course provides students with fundamental knowledge of management principles and practices. Topics include planning, organizing, leading, and controlling organizational resources. Students will learn about management theories, organizational behavior, and strategic decision-making processes.</synopsis>
+    <version>Current: January 2024 (Effective Term: 2410)</version>
+    <academicStaff>Dr. Tan Siew Leng, Prof. Lim Boon Huat, Dr. Wong Mei Ling</academicStaff>
+    <semester>Trimester 1, Year 1</semester>
+    <credits>3</credits>
+    <prerequisite>None</prerequisite>
+    <department>Business</department>
+  </course>
+
+  <course>
+    <name>Financial Accounting</name>
+    <code>BAC6113</code>
+    <type>Core for B.ACC (Hons) Accounting, B.BA (Hons) Business Administration</type>
+    <synopsis>This course introduces students to the fundamentals of financial accounting including the accounting cycle, financial statements preparation, and basic accounting principles. Students will learn to record business transactions and prepare financial reports according to accounting standards.</synopsis>
+    <version>Current: January 2024 (Effective Term: 2410)</version>
+    <academicStaff>Dr. Chong Ah Kow, CPA Sarah Lim, Dr. Raj Kumar</academicStaff>
+    <semester>Trimester 1, Year 1</semester>
+    <credits>3</credits>
+    <prerequisite>None</prerequisite>
+    <department>Business</department>
+  </course>
+
+  <course>
+    <name>Marketing Management</name>
+    <code>BMK6223</code>
+    <type>Specialisation for B.BA (Hons) Business Administration</type>
+    <synopsis>This course covers marketing concepts, consumer behavior analysis, market segmentation, product positioning, and the marketing mix. Students will learn to develop marketing strategies and understand the role of marketing in business success.</synopsis>
+    <version>Current: October 2023 (Effective Term: 2420)</version>
+    <academicStaff>Dr. Jessica Ng, Prof. Kumar Rajesh, Ms. Lim Pei Shan</academicStaff>
+    <semester>Trimester 2, Year 2</semester>
+    <credits>3</credits>
+    <prerequisite>BMG6113 Principles of Management</prerequisite>
+    <department>Business</department>
+  </course>
+
+  <course>
+    <name>Corporate Finance</name>
+    <code>BFN6223</code>
+    <type>Specialisation for B.BA (Hons) Business Administration, B.ACC (Hons) Accounting</type>
+    <synopsis>This course examines corporate financial management including capital budgeting, capital structure decisions, dividend policy, and working capital management. Students will analyze financial markets and learn to make optimal financing and investment decisions.</synopsis>
+    <version>Current: January 2024 (Effective Term: 2410)</version>
+    <academicStaff>Dr. Lee Chee Keong, CFA John Tan, Dr. Priya Sharma</academicStaff>
+    <semester>Trimester 2, Year 2</semester>
+    <credits>3</credits>
+    <prerequisite>BAC6113 Financial Accounting</prerequisite>
+    <department>Business</department>
+  </course>
+
+  <course>
+    <name>Human Resource Management</name>
+    <code>BHR6223</code>
+    <type>Specialisation for B.BA (Hons) Business Administration</type>
+    <synopsis>This course covers human resource management practices including recruitment, selection, training, performance management, compensation, and employee relations. Students will learn about strategic HR management and its impact on organizational effectiveness.</synopsis>
+    <version>Current: October 2023 (Effective Term: 2420)</version>
+    <academicStaff>Dr. Amelia Tan, Prof. David Lim, Ms. Rashidah Ahmad</academicStaff>
+    <semester>Trimester 3, Year 2</semester>
+    <credits>3</credits>
+    <prerequisite>BMG6113 Principles of Management</prerequisite>
+    <department>Business</department>
+  </course>
+
+  <course>
+    <name>Operations Management</name>
+    <code>BOM6223</code>
+    <type>Core for B.BA (Hons) Business Administration</type>
+    <synopsis>This course focuses on the design, operation, and improvement of production and service systems. Topics include process design, capacity planning, inventory management, quality control, and supply chain management.</synopsis>
+    <version>Current: January 2024 (Effective Term: 2410)</version>
+    <academicStaff>Dr. Chen Wei Ming, Prof. Rajesh Patel, Dr. Fatimah Zahra</academicStaff>
+    <semester>Trimester 1, Year 2</semester>
+    <credits>3</credits>
+    <prerequisite>BMG6113 Principles of Management</prerequisite>
+    <department>Business</department>
+  </course>
+
+  <course>
+    <name>Strategic Management</name>
+    <code>BSM6323</code>
+    <type>Capstone for B.BA (Hons) Business Administration</type>
+    <synopsis>This capstone course integrates knowledge from various business disciplines to analyze strategic management issues. Students will learn about competitive analysis, strategic planning, implementation, and evaluation in dynamic business environments.</synopsis>
+    <version>Current: January 2024 (Effective Term: 2410)</version>
+    <academicStaff>Prof. Lim Boon Huat, Dr. Tan Siew Leng, Dr. Ahmad Fauzi</academicStaff>
+    <semester>Trimester 3, Year 3</semester>
+    <credits>3</credits>
+    <prerequisite>BFN6223 Corporate Finance, BMK6223 Marketing Management</prerequisite>
+    <department>Business</department>
+  </course>
+
+  <course>
+    <name>International Business</name>
+    <code>BIB6223</code>
+    <type>Elective for B.BA (Hons) Business Administration</type>
+    <synopsis>This course examines the challenges and opportunities of conducting business across national boundaries. Topics include international trade theory, foreign exchange markets, cultural considerations, and global business strategies.</synopsis>
+    <version>Current: October 2023 (Effective Term: 2420)</version>
+    <academicStaff>Dr. Maria Rodriguez, Prof. Hiroshi Tanaka, Dr. Siti Nurhaliza</academicStaff>
+    <semester>Trimester 2, Year 3</semester>
+    <credits>3</credits>
+    <prerequisite>BMG6113 Principles of Management</prerequisite>
+    <department>Business</department>
+  </course>
+
+  <!-- Law Department Courses -->
+  <course>
+    <name>Introduction to Legal Studies</name>
+    <code>LLS6113</code>
+    <type>Core for LLB (Hons) Law</type>
+    <synopsis>This foundational course introduces students to the legal system, sources of law, legal reasoning, and basic legal concepts. Students will develop understanding of how law functions in society and learn fundamental legal research and writing skills.</synopsis>
+    <version>Current: January 2024 (Effective Term: 2410)</version>
+    <academicStaff>Prof. Dato' Ahmad Zakaria, Dr. Loh Siew Ping, Barrister James Wong</academicStaff>
+    <semester>Trimester 1, Year 1</semester>
+    <credits>3</credits>
+    <prerequisite>None</prerequisite>
+    <department>Law</department>
+  </course>
+
+  <course>
+    <name>Constitutional Law</name>
+    <code>LCL6223</code>
+    <type>Core for LLB (Hons) Law</type>
+    <synopsis>This course examines the fundamental principles of constitutional law including the structure of government, separation of powers, federalism, and constitutional rights. Students will analyze landmark constitutional cases and understand the role of judiciary in constitutional interpretation.</synopsis>
+    <version>Current: January 2024 (Effective Term: 2410)</version>
+    <academicStaff>Prof. Dato' Sri Rashid Hassan, Dr. Kavitha Ramasamy, Advocate Lim Chee Wah</academicStaff>
+    <semester>Trimester 2, Year 1</semester>
+    <credits>3</credits>
+    <prerequisite>LLS6113 Introduction to Legal Studies</prerequisite>
+    <department>Law</department>
+  </course>
+
+  <course>
+    <name>Contract Law</name>
+    <code>LCT6223</code>
+    <type>Core for LLB (Hons) Law</type>
+    <synopsis>This course covers the formation, terms, performance, and breach of contracts. Students will learn about offer and acceptance, consideration, capacity, legality, and remedies for breach of contract through case law analysis and practical applications.</synopsis>
+    <version>Current: October 2023 (Effective Term: 2420)</version>
+    <academicStaff>Dr. Tan Boon Keat, Advocate Siti Hajar, Dr. Rajesh Menon</academicStaff>
+    <semester>Trimester 1, Year 2</semester>
+    <credits>3</credits>
+    <prerequisite>LLS6113 Introduction to Legal Studies</prerequisite>
+    <department>Law</department>
+  </course>
+
+  <course>
+    <name>Criminal Law</name>
+    <code>LCR6223</code>
+    <type>Core for LLB (Hons) Law</type>
+    <synopsis>This course examines the principles of criminal law including elements of crimes, defenses, and criminal procedure. Students will study various categories of crimes and analyze the relationship between criminal law and society.</synopsis>
+    <version>Current: January 2024 (Effective Term: 2410)</version>
+    <academicStaff>Prof. Dato' Azman Ibrahim, Dr. Wong Kah Meng, Public Prosecutor Farah Nadia</academicStaff>
+    <semester>Trimester 2, Year 2</semester>
+    <credits>3</credits>
+    <prerequisite>LCL6223 Constitutional Law</prerequisite>
+    <department>Law</department>
+  </course>
+
+  <course>
+    <name>Tort Law</name>
+    <code>LTL6223</code>
+    <type>Core for LLB (Hons) Law</type>
+    <synopsis>This course studies civil wrongs and remedies including negligence, defamation, nuisance, and strict liability. Students will learn about the principles of tort liability and the remedies available to victims of tortious conduct.</synopsis>
+    <version>Current: January 2024 (Effective Term: 2410)</version>
+    <academicStaff>Dr. Lim Poh Choo, Advocate Ramesh Kumar, Dr. Nurul Izzah</academicStaff>
+    <semester>Trimester 3, Year 2</semester>
+    <credits>3</credits>
+    <prerequisite>LCT6223 Contract Law</prerequisite>
+    <department>Law</department>
+  </course>
+
+  <course>
+    <name>Administrative Law</name>
+    <code>LAL6323</code>
+    <type>Specialisation for LLB (Hons) Law</type>
+    <synopsis>This course examines the powers and duties of administrative agencies and the judicial review of administrative action. Students will study the principles of natural justice, procedural fairness, and the limits of executive power.</synopsis>
+    <version>Current: October 2023 (Effective Term: 2420)</version>
+    <academicStaff>Prof. Dato' Noriah Hashim, Dr. Chandra Mohan, Advocate Zainab Ali</academicStaff>
+    <semester>Trimester 1, Year 3</semester>
+    <credits>3</credits>
+    <prerequisite>LCL6223 Constitutional Law</prerequisite>
+    <department>Law</department>
+  </course>
+
+  <course>
+    <name>Corporate Law</name>
+    <code>LCO6323</code>
+    <type>Specialisation for LLB (Hons) Law</type>
+    <synopsis>This course covers the formation, management, and dissolution of corporations including directors' duties, shareholders' rights, corporate governance, and securities regulation. Students will analyze corporate structures and legal issues in business operations.</synopsis>
+    <version>Current: January 2024 (Effective Term: 2410)</version>
+    <academicStaff>Dr. Tan Kok Wah, Corporate Counsel Lisa Ng, Prof. Suresh Nair</academicStaff>
+    <semester>Trimester 2, Year 3</semester>
+    <credits>3</credits>
+    <prerequisite>LCT6223 Contract Law</prerequisite>
+    <department>Law</department>
+  </course>
+
+  <course>
+    <name>Intellectual Property Law</name>
+    <code>LIP6323</code>
+    <type>Elective for LLB (Hons) Law</type>
+    <synopsis>This course examines the protection of intellectual property including patents, trademarks, copyrights, and trade secrets. Students will learn about the acquisition, enforcement, and commercialization of intellectual property rights in the digital age.</synopsis>
+    <version>Current: January 2024 (Effective Term: 2410)</version>
+    <academicStaff>Dr. Priya Devi, Patent Attorney Michael Lim, Dr. Azizah Rahman</academicStaff>
+    <semester>Trimester 3, Year 3</semester>
+    <credits>3</credits>
+    <prerequisite>LCT6223 Contract Law</prerequisite>
+    <department>Law</department>
+  </course>
+
+  <course>
+    <name>Family Law</name>
+    <code>LFL6323</code>
+    <type>Elective for LLB (Hons) Law</type>
+    <synopsis>This course covers legal issues relating to marriage, divorce, child custody, adoption, and domestic relations. Students will study the intersection of law and family relationships including contemporary issues in family law.</synopsis>
+    <version>Current: October 2023 (Effective Term: 2420)</version>
+    <academicStaff>Dr. Fatimah Mohd Ali, Family Court Judge Sarah Tan, Advocate Ravi Shankar</academicStaff>
+    <semester>Trimester 1, Year 3</semester>
+    <credits>3</credits>
+    <prerequisite>LLS6113 Introduction to Legal Studies</prerequisite>
+    <department>Law</department>
+  </course>
+
+  <course>
+    <name>Environmental Law</name>
+    <code>LEL6323</code>
+    <type>Elective for LLB (Hons) Law</type>
+    <synopsis>This course examines legal frameworks for environmental protection including pollution control, natural resource management, and climate change law. Students will analyze the role of law in addressing environmental challenges and sustainable development.</synopsis>
+    <version>Current: January 2024 (Effective Term: 2410)</version>
+    <academicStaff>Dr. Green Lim, Environmental Advocate Dato' Seri Anuar, Prof. Eco Rahman</academicStaff>
+    <semester>Trimester 2, Year 3</semester>
+    <credits>3</credits>
+    <prerequisite>LAL6323 Administrative Law</prerequisite>
+    <department>Law</department>
   </course>
 </courses>
