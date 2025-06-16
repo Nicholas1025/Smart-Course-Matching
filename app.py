@@ -56,7 +56,6 @@ def build_sparql_query(interest):
 
         interest_lower = interest.lower()
 
-        # Updated keyword mapping to include Business and Law programs
         keyword_map = {
             # Computing Department
             "artificial intelligence": "artificial intelligence",
@@ -231,56 +230,7 @@ def get_departments():
         logger.error(f"Error retrieving departments: {e}")
         return ['Computing', 'Business', 'Law']  # Fallback
 
-def get_courses_by_department(department):
-    """Get courses filtered by department"""
-    global graph
-    if not graph:
-        return []
-    
-    try:
-        query = f"""
-        PREFIX cs: <http://example.org/courses#>
-        SELECT ?courseURI ?code ?name ?type ?synopsis ?version ?academicStaff ?semester ?credits ?prerequisite ?department
-        WHERE {{
-            ?courseURI cs:code ?code ;
-                      cs:name ?name ;
-                      cs:type ?type ;
-                      cs:synopsis ?synopsis ;
-                      cs:version ?version ;
-                      cs:academicStaff ?academicStaff ;
-                      cs:semester ?semester ;
-                      cs:credits ?credits ;
-                      cs:prerequisite ?prerequisite ;
-                      cs:department ?department .
-            FILTER(?department = "{department}")
-        }}
-        ORDER BY ?code
-        """
-        
-        results = graph.query(query)
-        courses = []
-        
-        for row in results:
-            course_data = {
-                'uri': str(row.courseURI),
-                'code': str(row.code),
-                'name': str(row.name),
-                'type': str(row.type),
-                'synopsis': str(row.synopsis),
-                'version': str(row.version),
-                'academicStaff': str(row.academicStaff),
-                'semester': str(row.semester),
-                'credits': str(row.credits),
-                'prerequisite': str(row.prerequisite),
-                'department': str(row.department)
-            }
-            courses.append(course_data)
-        
-        return courses
-        
-    except Exception as e:
-        logger.error(f"Error getting courses by department: {e}")
-        return []
+
 
 def get_course_prerequisites(course_uri):
     """Get prerequisites for a specific course using external SPARQL file"""
@@ -345,20 +295,7 @@ def search():
                            types=types,
                            departments=departments)
 
-@app.route('/department/<department_name>')
-def department_courses(department_name):
-    """Show courses by department"""
-    courses = get_courses_by_department(department_name)
-    
-    for course in courses:
-        course['prerequisites'] = get_course_prerequisites(course['uri'])
-    
-    departments = get_departments()
-    
-    return render_template('department.html',
-                          courses=courses,
-                          department=department_name,
-                          departments=departments)
+
 
 @app.route('/api/search')
 def api_search():
@@ -392,20 +329,7 @@ def api_departments():
     departments = get_departments()
     return jsonify({'departments': departments})
 
-@app.route('/api/department/<department_name>')
-def api_department_courses(department_name):
-    """API endpoint to get courses by department"""
-    courses = get_courses_by_department(department_name)
-    
-    # Add prerequisites to each course
-    for course in courses:
-        course['prerequisites'] = get_course_prerequisites(course['uri'])
-    
-    return jsonify({
-        'department': department_name,
-        'courses': courses,
-        'total': len(courses)
-    })
+
 
 @app.route('/health')
 def health_check():

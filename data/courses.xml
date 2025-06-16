@@ -366,4 +366,21 @@
     <prerequisite>LAL6323 Administrative Law</prerequisite>
     <department>Law</department>
   </course>
+  
+   <course>
+    <name>XXXX Law</name>
+    <code>LEL8888</code>
+    <type>Elective for LLB (Hons) Law</type>
+    <synopsis>This course examines legal frameworks for environmental protection including pollution control, natural resource management, and climate change law. Students will analyze the role of law in addressing environmental challenges and sustainable development.</synopsis>
+    <version>Current: January 2024 (Effective Term: 2410)</version>
+    <academicStaff>Dr. Green Lim, Environmental Advocate Dato' Seri Anuar, Prof. Eco Rahman</academicStaff>
+    <semester>Trimester 2, Year 3</semester>
+    <credits>3</credits>
+    <prerequisite>LAL6323 Administrative Law</prerequisite>
+    <department>Law</department>
+  </course>
+
+
+
+  
 </courses>
